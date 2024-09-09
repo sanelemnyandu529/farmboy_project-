@@ -1,0 +1,384 @@
+@import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+body {
+  background-color: #D2D2D2;
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+a:hover {
+  color: #0056b3;
+}
+
+header {
+  background-color: #000;
+  padding: 1rem 0;
+}
+
+.header-links a {
+  color: white;
+  margin: 0 10px;
+}
+
+.divider {
+  display: inline-block;
+  width: 1px;
+  height: 20px;
+  background-color: white;
+  margin: 0 10px;
+}
+
+.section-nav {
+  margin-top: 20px;
+}
+.section-nav a {
+  color: #000;
+  margin: 0 5px;
+}
+.section-nav .divider {
+  width: 1px;
+  height: 15px;
+  background-color: #000;
+  margin: 0 8px;
+}
+
+/* Custom styles for navigation */
+.navbar {
+  padding-right: 40px;
+  padding-top: 10px;
+}
+
+.dropdown-menu {
+  background-color: #0000A0; /* Custom dropdown background color */
+  border: none;
+  padding: 0;
+}
+
+.dropdown-menu .dropdown-item {
+  color: white; /* Text color for dropdown items */
+  padding: 10px 20px; /* Padding for dropdown items */
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #000080; /* Hover color */
+}
+
+.dropdown-menu .dropdown-menu {
+  background-color: #0000A0; /* Background color for sub-menu */
+  border: none;
+  margin-left: 20px; /* Indentation for subcategories */
+}
+
+.dropdown-menu .dropdown-menu .dropdown-item {
+  padding: 8px 20px; /* Padding for subcategories */
+}
+
+hr {
+  border-top: 4px solid black; /* Line color matching dropdown background */
+}
+
+/* Custom styles for advertising cards */
+.card {
+  border: 1px solid #ddd; /* Card border color */
+  border-radius: 0.5rem; /* Rounded corners for the card */
+  overflow: hidden; /* Hide overflow content */
+}
+
+.card-img-top {
+  width: 100%; /* Make image fit the width of the card */
+  height: 400px; /* height for the image */
+  object-fit: cover; /* Cover the card area, maintaining aspect ratio */
+}
+
+.card-body {
+  padding: 1rem; /* Padding inside the card body */
+}
+
+/* Custom button color */
+.btn-primary {
+  background-color: #0000FF; /* Set background color */
+  border-color: #0000FF; /* Set border color to match background */
+}
+
+.btn-primary:hover {
+  background-color: #000; /* Darken the color on hover */
+  border-color: #0000CC; /* Match border color on hover */
+}
+
+/* Custom button border and styles */
+.btn-outline-dark {
+  border: 2px solid #000; /* Black border */
+}
+
+.btn-outline-dark:hover {
+  background-color: #000; /* Black background on hover */
+  color: #fff; /* White text on hover */
+}
+
+.dropdown-menu-end {
+  right: 0; /* Align dropdown menu to the right */
+}
+
+.dropdown-menu {
+  border: 1px solid #000; /* Black border for dropdown menu */
+}
+
+/* Ensure product card borders are black and equal */
+.product-card {
+  border: 2px solid #939393; /* Set the border to black */
+  border-radius: 10px;
+  height: 400px; /* Adjust this value as needed for height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.product-card img {
+  max-height: 200px; /* Control image height */
+  object-fit: cover;
+}
+
+.product-card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+/* Product Name Styling */
+.product-name {
+  font-weight: bold;
+  color: black;
+}
+
+/* Rating Styling */
+.rating {
+  display: flex;
+  justify-content: center;
+  color: gold;
+}
+
+.rating .star {
+  font-size: 20px;
+}
+
+/* Price and Button Styling */
+.price {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+  margin-right: 5px;
+}
+
+.btn {
+  margin-top: auto;
+}
+
+/* Center All Content */
+.text-center {
+  text-align: center;
+}
+
+/* Pagination Section Styling */
+.pagination-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Space between the buttons */
+}
+
+/* Button Styling */
+.page-btn {
+  width: 40px; /* Square button */
+  height: 40px; /* Square button */
+  background-color: white; /* Button background color */
+  border: 2px solid black; /* Border color */
+  color: black; /* Text color */
+  text-align: center;
+  font-size: 16px;
+  line-height: 36px; /* Align text vertically */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.page-btn:hover {
+  background-color: lightgray;
+}
+
+/* Active button styling */
+.page-btn.active {
+  background-color: black;
+  color: white;
+}
+
+/* Trending Product Section */
+.trending-product-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+
+/* Trending Product Container */
+.trending-product-container {
+  position: relative;
+  width: 400px; /* Width of the rectangle */
+  height: 250px; /* Height of the rectangle */
+  background-color: #f9f9f9; /* Rectangle background color */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Image inside the Rectangle */
+.trending-product-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Overlay Effect */
+.trending-product-overlay:hover .trending-product-img {
+  opacity: 0.4; /* Dim the image when hovered */
+}
+
+/* Overlay Text */
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.overlay-text h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.overlay-text p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* Image Animation (Zoom) */
+.trending-product-img {
+  transition: transform 0.5s ease-in-out;
+}
+
+.trending-product-overlay:hover .trending-product-img {
+  transform: scale(1.1); /* Zoom in on hover */
+}
+
+footer {
+  background-color: #000; /* Set the background to black */
+  color: white; /* White text */
+  padding: 30px 0;
+}
+
+/* Darker Background for Sub-Footer */
+.darker-subfooter {
+  background-color: #222;
+  padding: 15px 0;
+}
+
+/* Footer Title */
+.footer-title h4 {
+  color: white;
+  margin-bottom: 15px;
+}
+
+/* Contact and Support Links */
+.contact-details li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Social Media Links */
+.footer-social ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.footer-social ul li {
+  margin: 0 10px;
+}
+
+.footer-social ul li a {
+  color: white;
+  font-size: 18px;
+}
+
+/* Payment Cards */
+.payment-card-bottom ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  padding: 0;
+}
+
+.payment-card-bottom ul li {
+  margin-left: 15px;
+}
+
+.payment-card-bottom ul li img {
+  width: 50px;
+}
+
+/* Footer End */
+.footer-end p {
+  margin: 0;
+  color: #fff;
+}
+
+/* General Styling */
+.footer-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-content ul li {
+  margin-bottom: 10px;
+}
+
+.footer-content ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-content ul li a:hover {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=custom.css.map */
