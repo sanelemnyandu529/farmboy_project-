@@ -3,14 +3,108 @@ body {
   background-color: #D2D2D2;
 }
 
-/* Navbar styling */
-.navbar {
-  background-color: #fff;
-  /* Adjust as per your need */
-  padding: 1rem;
-  /* margin-top: 5px; */
+.card-img-overlay {
+  color: white;
+  background: rgba(0, 0, 0, 0.4); /* Darken overlay */
+  position: relative;
 }
 
+.fixed-btn {
+  position: absolute; /* Fix button to a specific position */
+  bottom: 20px; /* Distance from the bottom */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Ensure it's centered */
+  font-size: 1.25rem;
+  padding: 10px 20px;
+}
+
+@media (max-width: 768px) {
+  .card-title {
+    font-size: 1.5rem; /* Adjust font size on smaller screens */
+    margin-bottom: 15px; /* Adjust spacing on smaller screens */
+  }
+  .fixed-btn {
+    font-size: 0.9rem; /* Adjust button text size */
+    padding: 10px 20px; /* Adjust button padding */
+  }
+}
+@media (max-width: 576px) {
+  .card-title {
+    font-size: 1.25rem; /* Further adjust font size for extra small screens */
+    margin-bottom: 10px; /* Further adjust spacing */
+  }
+  .fixed-btn {
+    font-size: 0.8rem; /* Further adjust button text size */
+    padding: 8px 16px; /* Further adjust button padding */
+  }
+}
+@media (max-width: 768px) {
+  .card-title {
+    font-size: 1.5rem; /* Smaller heading for mobile */
+  }
+  .fixed-btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+/* Ensure the navbar is positioned correctly */
+header {
+  position: relative; /* Allows absolute positioning of child elements */
+  width: 100%; /* Full width */
+  background-color: transparent; /* Transparent header by default */
+}
+
+/* General navbar styling */
+.navbar {
+  display: flex;
+  justify-content: flex-start; /* Align content to the left */
+  align-items: center;
+  background-color: transparent; /* Transparent header */
+  padding: 0; /* Remove default padding */
+}
+
+/* Ensure the logo is aligned and sized correctly */
+.navbar-brand img {
+  max-width: 100px; /* Adjust size as needed */
+}
+
+/* Ensure the navbar items are aligned to the left */
+.navbar-nav {
+  display: flex;
+  margin-left: 0; /* Align nav items to the left */
+  flex-grow: 1; /* Allow nav items to grow and fill available space */
+}
+
+/* Icons alignment */
+.icons {
+  display: flex;
+  gap: 10px; /* Space between icons */
+}
+
+/* Dropdown menu adjustments */
+.navbar .dropdown-menu {
+  left: 0;
+  right: auto; /* Prevent it from stretching to the right */
+  width: max-content; /* Adjust width to fit content */
+  background-color: white; /* Ensure dropdown has a background */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  header {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent header on mobile */
+  }
+  .navbar {
+    flex-direction: column; /* Stack items vertically */
+  }
+  .navbar-nav {
+    flex-direction: column; /* Stack nav items vertically on mobile */
+    margin: 0; /* Remove margins */
+  }
+  .icons {
+    margin-top: 10px; /* Space between icons and nav items */
+  }
+}
 .navbar-brand img {
   height: 50px;
   /* Adjust logo size */
@@ -108,6 +202,23 @@ body {
 .icons a:hover img {
   transform: scale(1.1);
   /* Slightly enlarge icon on hover */
+}
+
+.info-image {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Optional: Customize card styling if needed */
+.card {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.card-img-top {
+  object-fit: cover; /* Ensures images cover the card area */
+  max-height: 200px; /* Adjust based on image aspect ratio */
+  width: 100%;
 }
 
 /* Ensure the section takes full width and height of its container */
@@ -223,7 +334,7 @@ body {
 /* General Styles for the Best Sales Section */
 .promotions {
   padding: 20px 0;
-  background-color: #f8f9fa;
+  background-color: #D2D2D2;
   /* Light background color */
 }
 
@@ -362,10 +473,23 @@ body {
   /* Ensure the text is above the line */
 }
 
+.card-title.display-4 {
+  color: white; /* Set the text color to white */
+}
+
 .featured-text h2 {
   margin: 0;
   font-size: 28px;
   color: #000;
+}
+
+.card-title {
+  color: black; /* Set the color of the title to black */
+  font-weight: bold; /* Make the title bold */
+}
+
+.card-text {
+  color: black; /* Set the color of the text to black */
 }
 
 /* Style for the Card */
@@ -923,6 +1047,27 @@ body {
     margin-top: 10px;
     justify-content: center;
   }
+}
+.video-container {
+  position: relative;
+  width: 80%; /* Adjust width as needed */
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  margin: 0 auto; /* Center horizontally */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width of the container */
+  height: 70%; /* Full height of the container */
+}
+
+.d-flex {
+  display: flex;
+  justify-content: center; /* Center horizontally */
 }
 
 /*# sourceMappingURL=style.css.map */
