@@ -1,0 +1,1073 @@
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+body {
+  background-color: #D2D2D2;
+}
+
+.card-img-overlay {
+  color: white;
+  background: rgba(0, 0, 0, 0.4); /* Darken overlay */
+  position: relative;
+}
+
+.fixed-btn {
+  position: absolute; /* Fix button to a specific position */
+  bottom: 20px; /* Distance from the bottom */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Ensure it's centered */
+  font-size: 1.25rem;
+  padding: 10px 20px;
+}
+
+@media (max-width: 768px) {
+  .card-title {
+    font-size: 1.5rem; /* Adjust font size on smaller screens */
+    margin-bottom: 15px; /* Adjust spacing on smaller screens */
+  }
+  .fixed-btn {
+    font-size: 0.9rem; /* Adjust button text size */
+    padding: 10px 20px; /* Adjust button padding */
+  }
+}
+@media (max-width: 576px) {
+  .card-title {
+    font-size: 1.25rem; /* Further adjust font size for extra small screens */
+    margin-bottom: 10px; /* Further adjust spacing */
+  }
+  .fixed-btn {
+    font-size: 0.8rem; /* Further adjust button text size */
+    padding: 8px 16px; /* Further adjust button padding */
+  }
+}
+@media (max-width: 768px) {
+  .card-title {
+    font-size: 1.5rem; /* Smaller heading for mobile */
+  }
+  .fixed-btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+/* Ensure the navbar is positioned correctly */
+header {
+  position: relative; /* Allows absolute positioning of child elements */
+  width: 100%; /* Full width */
+  background-color: transparent; /* Transparent header by default */
+}
+
+/* General navbar styling */
+.navbar {
+  display: flex;
+  justify-content: flex-start; /* Align content to the left */
+  align-items: center;
+  background-color: transparent; /* Transparent header */
+  padding: 0; /* Remove default padding */
+}
+
+/* Ensure the logo is aligned and sized correctly */
+.navbar-brand img {
+  max-width: 100px; /* Adjust size as needed */
+}
+
+/* Ensure the navbar items are aligned to the left */
+.navbar-nav {
+  display: flex;
+  margin-left: 0; /* Align nav items to the left */
+  flex-grow: 1; /* Allow nav items to grow and fill available space */
+}
+
+/* Icons alignment */
+.icons {
+  display: flex;
+  gap: 10px; /* Space between icons */
+}
+
+/* Dropdown menu adjustments */
+.navbar .dropdown-menu {
+  left: 0;
+  right: auto; /* Prevent it from stretching to the right */
+  width: max-content; /* Adjust width to fit content */
+  background-color: white; /* Ensure dropdown has a background */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  header {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent header on mobile */
+  }
+  .navbar {
+    flex-direction: column; /* Stack items vertically */
+  }
+  .navbar-nav {
+    flex-direction: column; /* Stack nav items vertically on mobile */
+    margin: 0; /* Remove margins */
+  }
+  .icons {
+    margin-top: 10px; /* Space between icons and nav items */
+  }
+}
+.navbar-brand img {
+  height: 50px;
+  /* Adjust logo size */
+}
+
+.navbar-nav .nav-item {
+  margin-right: 20px;
+  /* Space between navbar items */
+}
+
+.navbar-nav .nav-link {
+  font-size: 16px;
+  color: #000;
+  /* Default text color */
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 8px 15px;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #141BB8;
+  /* Blue color on hover/active */
+}
+
+.navbar-nav .nav-link::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #141BB8;
+  /* Blue color for the line */
+  left: 0;
+  top: -2px;
+  /* Position the line just above the text */
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover::before {
+  width: 100%;
+  /* Draw the line across the full width on hover */
+}
+
+/* Dropdown menu styling */
+.navbar-nav .nav-item.dropdown {
+  position: relative;
+}
+
+/* Adjust the dropdown menu to appear on top of other content */
+.navbar-nav .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  /* Aligns the dropdown just below the nav link */
+  left: 0;
+  z-index: 1050;
+  /* High z-index to ensure it appears on top of other content */
+  display: none;
+  /* Initially hidden */
+  background-color: white;
+  border: 1px solid #ccc;
+}
+
+/* Show the dropdown menu when the dropdown is active */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+  font-weight: 200;
+  font-size: medium;
+  /* Show dropdown on hover */
+}
+
+/* Ensure dropdown items have proper styling */
+.navbar-nav .dropdown-item {
+  padding: 8px 20px;
+  color: #000;
+}
+
+.navbar-nav .dropdown-item:hover {
+  background-color: #f1f1f1;
+  color: #141BB8;
+}
+
+/* Icons styling */
+.icons a {
+  margin-left: 15px;
+}
+
+.icons img {
+  height: 30px;
+  /* Adjust icon size */
+  transition: transform 0.3s;
+}
+
+.icons a:hover img {
+  transform: scale(1.1);
+  /* Slightly enlarge icon on hover */
+}
+
+.info-image {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Optional: Customize card styling if needed */
+.card {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.card-img-top {
+  object-fit: cover; /* Ensures images cover the card area */
+  max-height: 200px; /* Adjust based on image aspect ratio */
+  width: 100%;
+}
+
+/* Ensure the section takes full width and height of its container */
+.embed-responsive {
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+  /* Full viewport height */
+  padding: 0;
+  margin: 0;
+}
+
+.card {
+  max-width: 100%;
+  border: none;
+}
+
+.hero-content {
+  position: relative;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  /* Optional: Add a dark overlay for better text visibility */
+}
+
+.card-title {
+  font-size: 2.5rem;
+  /* Adjust the font size */
+  margin-top: 40px;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.btn-secondary {
+  font-size: 1.2rem;
+  /* padding: 10px 15px; */
+  /* text-align: center; */
+  background-color: #141BB8;
+  border-radius: 30px;
+  height: 50px;
+  width: 140px;
+}
+
+/* Basic styles for the info section */
+.info-image {
+  margin-top: 50px;
+  max-width: 100px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  /* Smooth transition for the image */
+}
+
+.col h2 {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  transition: color 0.3s ease;
+  /* Smooth transition for the heading */
+}
+
+.col p {
+  font-size: 1rem;
+  margin-top: 10px;
+  transition: color 0.3s ease, opacity 0.3s ease;
+  /* Smooth transition for the paragraph */
+}
+
+/* Hover effect for the entire column */
+.col:hover .info-image {
+  transform: scale(1.1);
+  /* Scale up the image slightly */
+  opacity: 0.9;
+  /* Slight opacity change */
+}
+
+.col:hover h2 {
+  color: #141BB8;
+  /* Change heading color on hover */
+}
+
+.col:hover p {
+  color: #555;
+  /* Change paragraph text color on hover */
+  opacity: 0.9;
+  /* Slight opacity change */
+}
+
+/* Optional: add a shadow effect to the whole column on hover */
+.col:hover {
+  /* Adds a subtle shadow effect */
+  transition: box-shadow 0.3s ease;
+  /* Smooth transition for the shadow */
+}
+
+/* Promotions  */
+/* General Styles for the Best Sales Section */
+.promotions {
+  padding: 20px 0;
+  background-color: #D2D2D2;
+  /* Light background color */
+}
+
+.promotions h4 {
+  font-size: 2rem;
+  color: #343a40;
+  margin-bottom: 40px;
+}
+
+/* Style for the Cards */
+.card {
+  border: none;
+  /* Remove default border */
+  border-radius: 10px;
+  /* Slightly rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Add subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 100%;
+  /* Ensure the image fits the card width */
+  height: auto;
+  /* Keep the aspect ratio */
+  object-fit: cover;
+  /* Cover the card space without distorting the image */
+}
+
+.card-body {
+  padding: 15px;
+  text-align: center;
+}
+
+.card-titles {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: black;
+  /* Primary color for the title */
+}
+
+.card-text {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #6c757d;
+}
+
+/* Hover effect for the cards */
+.cards:hover {
+  transform: translateY(-5px);
+  /* Slightly move the card up */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  /* Increase the shadow on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .promotions h4 {
+    font-size: 1.5rem;
+  }
+  .card {
+    margin-bottom: 20px;
+    /* Add space between cards on smaller screens */
+  }
+  .card-title {
+    font-size: 1.3rem;
+  }
+  .card-text {
+    font-size: 0.9rem;
+  }
+}
+/* Style for the Button */
+.btn-primary {
+  background-color: #141BB8;
+  /* Primary button color */
+  border: none;
+  /* Remove default border */
+  border-radius: 20px;
+  /* Rounded corners for the button */
+  padding: 9px 13px;
+  /* Adjust padding for better appearance */
+  font-size: 1rem;
+  /* Font size for the button text */
+  color: #fff;
+  /* Text color */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  /* Darker shade on hover */
+  transform: translateY(-2px);
+  /* Slight lift effect on hover */
+}
+
+/* Additional styles to adjust text color on hover (optional) */
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: #141BB8;
+  /* Darker shade for focus and active states */
+  border-color: #141BB8;
+  /* Darker border color for focus and active states */
+  /* box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5); */
+  /* Shadow for focus state */
+}
+
+/* FEATURED PRODUCTS */
+.featured-section {
+  position: relative;
+  text-align: center;
+  margin: 40px 0;
+}
+
+.featured-line {
+  border: 0;
+  border-top: 2px solid grey;
+  /* Blue line */
+  margin: 0 auto;
+  /* Center the line */
+  width: 80%;
+  /* Adjust width as needed */
+}
+
+.featured-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  /* Background color to overlay the line */
+  padding: 0 10px;
+  /* Padding around the text */
+  z-index: 1;
+  /* Ensure the text is above the line */
+}
+
+.card-title.display-4 {
+  color: white; /* Set the text color to white */
+}
+
+.featured-text h2 {
+  margin: 0;
+  font-size: 28px;
+  color: #000;
+}
+
+.card-title {
+  color: black; /* Set the color of the title to black */
+  font-weight: bold; /* Make the title bold */
+}
+
+.card-text {
+  color: black; /* Set the color of the text to black */
+}
+
+/* Style for the Card */
+.card {
+  text-align: center;
+  /* Center align text and content */
+  background-color: #fff;
+  /* Card background color */
+  margin: 20px auto;
+  /* Margin to center the card in its container */
+}
+
+.card h3, h4 {
+  color: #000;
+}
+
+/* Style for Rating Stars */
+.rating {
+  margin: 10px 0;
+  /* Margin above and below the rating stars */
+}
+
+.star {
+  color: #f39c12;
+  /* Color of the stars */
+  font-size: 1.5rem;
+  /* Size of the stars */
+}
+
+.star.filled {
+  color: #f39c12;
+  /* Filled star color */
+}
+
+/* Style for Strikethrough Price */
+.strikethrough {
+  text-decoration: line-through;
+  /* Line through the old price */
+  color: #888;
+  /* Color of the old price */
+  margin-right: 10px;
+  /* Space between old and new price */
+}
+
+/* Style for the Button */
+.btn-primary1 {
+  background-color: #141BB8;
+  /* Primary button color */
+  border: none;
+  /* Remove default border */
+  border-radius: 20px;
+  /* width: 140px;
+  text-align: center; */
+  padding: 9px 13px;
+  margin: 20px auto;
+  /* Margin to center the card in its container */
+  height: 40px;
+  /* Rounded corners for the button */
+  font-size: 1rem;
+  /* Font size for the button text */
+  color: #fff;
+  /* Text color */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+  /* Remove underline */
+  display: inline-block;
+  /* Ensure button fits content */
+}
+
+.btn-primary1:hover {
+  background-color: #0056b3;
+  color: #000;
+  /* Darker shade on hover */
+  transform: translateY(-2px);
+  /* Slight lift effect on hover */
+}
+
+/* Products Section Styling */
+.products-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  /* Responsive columns */
+  gap: 20px;
+  /* Space between columns */
+  padding: 20px;
+  /* Padding around the section */
+}
+
+/* Product Containers Styling */
+.product-containers {
+  border: 1px solid #ddd;
+  /* Border around the product container */
+  border-radius: 10px;
+  /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow */
+  overflow: hidden;
+  /* Ensure content stays within rounded corners */
+  background-color: #fff;
+  /* Background color */
+  text-align: center;
+  /* Center-align text inside the product container */
+  padding: 15px;
+  /* Padding inside each product container */
+  display: flex;
+  flex-direction: column;
+  /* Stack elements vertically */
+  align-items: center;
+  /* Center-align items horizontally */
+  height: 100%;
+  /* Ensure full height for consistent layout */
+}
+
+/* Product Images Styling */
+.product-images {
+  width: 100%;
+  /* Ensure the image takes up the full width of the container */
+  max-height: 200px;
+  /* Limit the maximum height of the images */
+  object-fit: cover;
+  /* Ensure image covers the area without distortion */
+  border-bottom: 1px solid #000;
+  /* Line between image and text */
+  margin-bottom: 10px;
+  /* Space between image and text */
+}
+
+/* Product Infos Styling */
+.product-infos h3,
+.product-infos h4 {
+  margin: 10px 0;
+  color: #000;
+  /* Space around headings */
+}
+
+/* Rating Styling */
+.rating {
+  margin: 10px 0;
+  /* Space around the rating stars */
+}
+
+/* Style for Stars */
+.star {
+  color: #f39c12;
+  /* Color of the stars */
+  font-size: 1.5rem;
+  /* Size of the stars */
+}
+
+.star.filled {
+  color: #f39c12;
+  /* Filled star color */
+}
+
+/* Style for Strikethrough Price */
+.strikethroughs {
+  text-decoration: line-through;
+  /* Line through the old price */
+  color: #000;
+  /* Color of the old price */
+  margin-right: 10px;
+  /* Space between old and new price */
+}
+
+/* Style for the Button */
+.select-options {
+  background-color: #007bff;
+  /* Button color */
+  border: none;
+  /* Remove default border */
+  border-radius: 12px;
+  /* Rounded corners */
+  padding: 12px 24px;
+  /* Adjust padding */
+  font-size: 1rem;
+  /* Font size for the button text */
+  color: #fff;
+  /* Text color */
+  text-decoration: none;
+  /* Remove underline */
+  display: inline-block;
+  /* Ensure button fits content */
+  margin-top: 15px;
+  /* Space above the button */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.select-options:hover {
+  background-color: #0056b3;
+  /* Darker shade on hover */
+  transform: translateY(-2px);
+  /* Slight lift effect on hover */
+}
+
+/* Why Choose Us Section */
+.why-choose-us {
+  text-align: center;
+  padding: 40px 20px;
+  /* Light background for contrast */
+}
+
+.why-choose-us h2 {
+  font-size: 2rem;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.choose-us-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.choose-us-item {
+  flex: 1 1 calc(33% - 20px);
+  /* Responsive width with spacing */
+  border-radius: 10px;
+  /* Rounded corners */
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Smooth transition for hover effects */
+  margin: 10px;
+}
+
+.choose-us-item:hover {
+  transform: translateY(-5px);
+  /* Slight lift on hover */
+  /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); */
+  /* Deeper shadow on hover */
+}
+
+/* Hover effect specifically for h3 */
+.choose-us-item:hover h3 {
+  color: #141BB8;
+  cursor: pointer;
+  /* Change color on hover */
+  text-decoration: none;
+  /* Underline on hover */
+}
+
+.choose-us-logo {
+  width: 60px;
+  /* Fixed size for consistency */
+  margin-bottom: 15px;
+}
+
+.choose-us-item h3 {
+  font-size: 1.5rem;
+  color: #000;
+  margin-bottom: 10px;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+  /* Smooth transition for hover effect */
+}
+
+.choose-us-item p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Contact Info Section */
+.contact-infos {
+  width: 100%;
+  max-width: 1200px;
+  /* Limit the maximum width */
+  margin: 0 auto;
+  /* Center the section */
+  padding: 20px;
+  /* Add padding for spacing */
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  /* Optional: Add shadow for better visual */
+  /* Optional: Add a background color */
+  border-radius: 10px;
+  /* Rounded corners */
+}
+
+.contact-infos h2 {
+  font-size: 2rem;
+  color: #000;
+  margin-bottom: 10px;
+  text-align: center;
+  /* Center-align heading */
+}
+
+.contact-infos .description {
+  font-size: 1rem;
+  color: grey;
+  margin-bottom: 20px;
+  text-align: center;
+  /* Center-align description */
+}
+
+/* Info Grid */
+.info-grid {
+  display: flex;
+  flex-wrap: wrap;
+  /* Allow items to wrap */
+  justify-content: space-between;
+  /* Space items evenly */
+  align-items: flex-start;
+  /* Align items to the start */
+  gap: 20px;
+  /* Space between items */
+  margin-top: 20px;
+}
+
+.info-item {
+  flex: 1 1 calc(25% - 20px);
+  /* Responsive width with spacing */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  /* Add padding for spacing */
+  /* Optional: Add background color */
+  border-radius: 10px;
+  /* Rounded corners */
+  /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
+  /* Optional: Add shadow for better visual */
+}
+
+.info-item img {
+  width: 40px;
+  margin-bottom: 10px;
+}
+
+.info-item h4 {
+  font-size: 1.2rem;
+  color: #000;
+  margin-bottom: 5px;
+  transition: 0.3s;
+}
+
+.info-item:hover h4 {
+  color: #141BB8;
+}
+
+.info-item p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .info-item {
+    flex: 1 1 100%;
+    /* Stack items in a single column */
+  }
+}
+/* Divider */
+.divider {
+  height: 1px;
+  background-color: grey;
+  margin: 10px 0;
+  /* Space between the sections */
+  width: 100%;
+  align-items: center;
+  text-align: center;
+}
+
+/* Contact Form Section */
+.contact-form {
+  width: 50%;
+}
+
+.contact-form h2 {
+  font-size: 2rem;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #444;
+}
+
+.btn-submit {
+  padding: 12px 20px;
+  background-color: #141BB8;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease-in;
+}
+
+.btn-submit:hover {
+  background-color: #007bff;
+}
+
+.site-footer {
+  margin-top: 10px;
+  background-color: black;
+  color: white;
+  padding: 40px 0;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 50px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 0 20px;
+}
+
+.footer-section h4,
+.footer-section h5,
+.footer-section h6 {
+  margin-bottom: 10px;
+}
+
+.footer-section h4 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #fff;
+}
+
+.footer-section h5 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #ccc;
+}
+
+.footer-section.logo-social h6 {
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.footer-section.logo-social .footer-logo {
+  display: block;
+  margin: 0 auto;
+}
+
+.footer-section p,
+.footer-section ul {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  color: #fff;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #444;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom p {
+  font-size: 0.8rem;
+  color: #ccc;
+}
+
+.payment-methods {
+  display: flex;
+}
+
+.payment-btn {
+  background-color: #333;
+  color: grey;
+  border: none;
+  padding: 8px 12px;
+  margin-left: 10px;
+  font-size: 0.8rem;
+}
+
+.payment-btn:hover {
+  background-color: #555;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+  }
+  .footer-section {
+    margin: 20px 0;
+    width: 100%;
+    text-align: center;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  .payment-methods {
+    margin-top: 10px;
+    justify-content: center;
+  }
+}
+.video-container {
+  position: relative;
+  width: 80%; /* Adjust width as needed */
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  margin: 0 auto; /* Center horizontally */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width of the container */
+  height: 70%; /* Full height of the container */
+}
+
+.d-flex {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+}
+
+/*# sourceMappingURL=style.css.map */
