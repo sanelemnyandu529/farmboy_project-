@@ -1,6 +1,12 @@
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+body
+{
+    background-color: #D2D2D2;
+}
+
 /* Navbar styling */
 .navbar {
-    background-color: #f8f9fa;
+    background-color: #fff;
     /* Adjust as per your need */
     padding: 1rem;
     /* margin-top: 5px; */
@@ -164,7 +170,7 @@
     border-radius: 30px;
     height: 50px;
     width: 140px;
-
+    
 
 }
 
@@ -304,9 +310,8 @@
         font-size: 0.9rem;
     }
 
-
+   
 }
-
 /* Style for the Button */
 .btn-primary {
     background-color: #141BB8;
@@ -383,7 +388,7 @@
 
 /* Style for the Card */
 .card {
-
+  
     text-align: center;
     /* Center align text and content */
     background-color: #fff;
@@ -391,9 +396,8 @@
     margin: 20px auto;
     /* Margin to center the card in its container */
 }
-
-.card h3,
-h4 {
+.card h3,h4
+{
     color: #000;
 }
 
@@ -434,9 +438,9 @@ h4 {
     border-radius: 20px;
     /* width: 140px;
     text-align: center; */
-    padding: 9px 13px;
-    margin: 20px auto;
-    /* Margin to center the card in its container */
+        padding: 9px 13px;
+        margin: 20px auto;
+            /* Margin to center the card in its container */
     height: 40px;
     /* Rounded corners for the button */
     font-size: 1rem;
@@ -717,8 +721,7 @@ h4 {
     margin-bottom: 5px;
     transition: .3s;
 }
-
-.info-item:hover h4 {
+.info-item:hover h4{
     color: #141BB8;
 }
 
@@ -803,33 +806,26 @@ h4 {
     background-color: #007bff;
 }
 
-
-/* Footer Styles */
 .site-footer {
-    margin-top: 20px;
+    margin-top: 10px;
     background-color: black;
     color: white;
     padding: 40px 0;
     font-family: Arial, sans-serif;
 }
 
-/* Container for Footer Sections */
 .footer-container {
     display: flex;
-    flex-wrap: wrap;
-    /* Allow wrapping for smaller screens */
     justify-content: space-between;
-    padding: 0 20px;
-    /* Reduced padding for smaller screens */
-    gap: 20px;
-    /* Space between sections */
+    align-items: flex-start;
+    padding: 0 50px;
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
-/* Styling for Each Footer Section */
 .footer-section {
-    flex: 1 1 200px;
-    /* Adjust flex basis for responsiveness */
-    margin-right: 20px;
+    flex: 1;
+    margin: 0 20px;
 }
 
 .footer-section h4,
@@ -852,11 +848,15 @@ h4 {
     color: #ccc;
 }
 
-.footer-section h6 {
-    font-size: 0.9rem;
-    font-weight: normal;
-    margin-top: 10px;
-    color: #ccc;
+.footer-section.logo-social h6 {
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.footer-section.logo-social .footer-logo {
+    display: block;
+    margin: 0 auto;
 }
 
 .footer-section p,
@@ -877,27 +877,15 @@ h4 {
 .footer-section ul li a {
     color: #ccc;
     text-decoration: none;
-    transition: .3s ease-in-out;
 }
 
 .footer-section ul li a:hover {
-    color: #141BB8;
-}
-
-/* Logo and Social Media Section */
-.footer-logo {
-    max-width: 150px;
-    margin-bottom: 10px;
-}
-
-.social-icons {
-    display: flex;
-    gap: 10px;
-    /* Space between social icons */
+    color: #fff;
 }
 
 .social-icons a {
     display: inline-block;
+    margin-right: 10px;
 }
 
 .social-icons img {
@@ -905,18 +893,12 @@ h4 {
     height: 30px;
 }
 
-/* Bottom Footer */
 .footer-bottom {
     border-top: 1px solid #444;
-    padding: 20px 20px;
-    /* Reduced padding for smaller screens */
+    padding: 20px 50px;
     display: flex;
-    flex-wrap: wrap;
-    /* Allow wrapping for smaller screens */
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
-    /* Space between elements */
 }
 
 .footer-bottom p {
@@ -924,40 +906,45 @@ h4 {
     color: #ccc;
 }
 
-/* Payment Methods */
 .payment-methods {
     display: flex;
-    gap: 10px;
-    /* Space between payment buttons */
 }
 
 .payment-btn {
     background-color: #333;
-    color: white;
+    color: grey;
     border: none;
     padding: 8px 12px;
+    margin-left: 10px;
     font-size: 0.8rem;
-    display: flex;
-    align-items: center;
-    /* Center align icon and text */
-    gap: 5px;
-    /* Space between icon and text */
-    border-radius: 4px;
-    /* Rounded corners for buttons */
-    transition: background-color 0.3s ease;
 }
 
 .payment-btn:hover {
     background-color: #555;
 }
 
-/* Social Icons Colors */
-.social-icons a {
-    color: #fff;
-    /* Color of the social icons */
-}
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px;
+    }
 
-.social-icons a:hover {
-    color: #ccc;
-    /* Hover color for social icons */
+    .footer-section {
+        margin: 20px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;   
+        padding: 20px;
+    }
+
+    .payment-methods {
+        margin-top: 10px;
+        justify-content: center;
+    }
 }
